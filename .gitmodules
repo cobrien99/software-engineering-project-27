@@ -1,0 +1,3 @@
+[submodule "sceneform-android-sdk"]
+	path = sceneform-android-sdk
+	url = https://github.com/google-ar/sceneform-android-sdk.git
