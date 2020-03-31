@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         transformableNode.select()
     }
 
-    private fun getScreenCenter(): android.graphics.Point {
+    private fun getScreenCenter(): Point {
         val vw = findViewById<View>(android.R.id.content)
         return Point(vw.width / 2, vw.height / 2)
     }

@@ -55,8 +55,12 @@ dependencies {
 
 apply plugin: 'com.google.ar.sceneform.plugin'
 
-sceneform.asset('sampledata/models/andy.obj',
+sceneform.asset('sampledata/models/fire.obj',
         'default',
-        'sampledata/models/andy.sfa',
-        'src/main/res/raw/andy')
+        'sampledata/models/fire.sfa',
+        'src/main/res/raw/fire')
 
+sceneform.asset('sampledata/models/campfire.obj',
+        'default',
+        'sampledata/models/campfire.sfa',
+        'src/main/res/raw/campfire')

@@ -42,7 +42,7 @@ public class HelloSceneformActivity extends AppCompatActivity {
   private static final double MIN_OPENGL_VERSION = 3.0;
 
   private ArFragment arFragment;
-  private ModelRenderable andyRenderable;
+  private ModelRenderable fireRenderable;
 
   @Override
   @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
@@ -60,14 +60,22 @@ public class HelloSceneformActivity extends AppCompatActivity {
 
     // When you build a Renderable, Sceneform loads its resources in the background while returning
     // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
+
+
+
+
+/*
+	To change renderable to different fire change .setSource to (this, R.raw.fire)
+*/
+
     ModelRenderable.builder()
-        .setSource(this, R.raw.andy)
+        .setSource(this, R.raw.campfire)
         .build()
-        .thenAccept(renderable -> andyRenderable = renderable)
+        .thenAccept(renderable -> fireRenderable = renderable)
         .exceptionally(
             throwable -> {
               Toast toast =
-                  Toast.makeText(this, "Unable to load andy renderable", Toast.LENGTH_LONG);
+                  Toast.makeText(this, "Unable to load fire renderable", Toast.LENGTH_LONG);
               toast.setGravity(Gravity.CENTER, 0, 0);
               toast.show();
               return null;
@@ -75,7 +83,7 @@ public class HelloSceneformActivity extends AppCompatActivity {
 
     arFragment.setOnTapArPlaneListener(
         (HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
-          if (andyRenderable == null) {
+          if (fireRenderable == null) {
             return;
           }
 
@@ -85,10 +93,10 @@ public class HelloSceneformActivity extends AppCompatActivity {
           anchorNode.setParent(arFragment.getArSceneView().getScene());
 
           // Create the transformable andy and add it to the anchor.
-          TransformableNode andy = new TransformableNode(arFragment.getTransformationSystem());
-          andy.setParent(anchorNode);
-          andy.setRenderable(andyRenderable);
-          andy.select();
+          TransformableNode fire = new TransformableNode(arFragment.getTransformationSystem());
+          fire.setParent(anchorNode);
+          fire.setRenderable(fireRenderable);
+          fire.select();
         });
   }
 
