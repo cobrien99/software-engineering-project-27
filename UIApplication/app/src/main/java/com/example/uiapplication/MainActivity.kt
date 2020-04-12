@@ -36,6 +36,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
+<<<<<<< HEAD
+=======
+    private fun getScreenCenter(): Point {
+        val vw = findViewById<View>(android.R.id.content)
+        return Point(vw.width / 2, vw.height / 2)
+    }
+>>>>>>> f9f0629e34b2cbb749cd8b2b174d307a67d8e9b6
 
 
 }
