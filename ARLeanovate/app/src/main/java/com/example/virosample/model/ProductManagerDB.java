@@ -37,7 +37,7 @@ public class ProductManagerDB {
 
     // A static set of all known products to be displayed in the application.
     private Product[] defaultProductList = new Product[]{
-            new Product("Fire", R.drawable.furniture_0,"file:///android_asset/PUSHILIN_campfire.mtl"),
+            new Product("Fire", R.drawable.fire,"file:///android_asset/PUSHILIN_campfire.mtl"),
           /*  new Product("Furniture", R.drawable.furniture_1,"file:///android_asset/object_lamp.vrx", LAMP_WEBPAGE),
             new Product("Furniture", R.drawable.furniture_2,"file:///android_asset/object_lamp.vrx", LAMP_WEBPAGE),
             new Product("Furniture", R.drawable.furniture_3,"file:///android_asset/object_lamp.vrx", LAMP_WEBPAGE),
