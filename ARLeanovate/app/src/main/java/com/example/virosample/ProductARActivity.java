@@ -394,7 +394,7 @@ public class ProductARActivity extends Activity {
                 mHUDInstructions.setText("Great! Now tap where you want to see the product.");
                 break;
             case SELECTED_SURFACE:
-                mHUDInstructions.setText("Great! Use one finger to move and two fingers to rotate.");
+                mHUDInstructions.setText("Done!");
                 break;
             default:
                 mHUDInstructions.setText("Initializing AR....");
@@ -419,9 +419,9 @@ public class ProductARActivity extends Activity {
         switch(mStatus){
             case FINDING_SURFACE:
             case SURFACE_NOT_FOUND:
-            case SELECTED_SURFACE:
                 mCrosshairModel.setOpacity(0);
                 break;
+            case SELECTED_SURFACE:
             case SURFACE_FOUND:
                 mCrosshairModel.setOpacity(1);
                 break;
