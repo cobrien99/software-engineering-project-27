@@ -25,7 +25,7 @@
             android:name="com.example.virosample.ProductSelectionActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:label="Amazon AR Gallery">
+            android:label="AR Learnovate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -38,7 +38,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:label="Product Details"
+            android:label="Fitbit Details"
             android:name="com.example.virosample.ProductDetailActivity"/>
     </application>
 
