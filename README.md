@@ -20,3 +20,6 @@ The AR scenario is created using the library Viro which is based off of ArCore
 
 
 The *FitBit-api-test* folder contains a program that transmits data collected by the fitbit to a server. 
+
+
+(The newproject2 folder contains a main menu and the UI of heart rate line data. This works on expo and iOS devices, but does not work on Android. So it is not used and included in this app.)
