@@ -7,6 +7,8 @@ This project includes many different technologies including:
   * graphing heart rate data in real time
   
 The *ARLearnovate* folder contains our AR application. To emulate a stressful situation we created an augmented reality app that would display a fire on surfaces that the phone camera is pointed at. 
+This app can be run on android studios, requires a device that supports ArCore. 
+The AR scenario is created using the library Viro which is based off of ArCore 
 
 
 The *FitBit-api-test* folder contains a program that transmits data collected by the fitbit to a server. 
