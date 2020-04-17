@@ -15,7 +15,7 @@ This project includes many different technologies including:
 
 # Technology
 The *ARLearnovate* folder contains our AR application. To emulate a stressful situation we created an augmented reality app that would display a fire on surfaces that the phone camera is pointed at. 
-This app can be run on android studios, requires a device that supports ArCore. 
+This app can be run on android studios, requires a physical device that supports ArCore as it can not be run on an emmulator.
 The AR scenario is created using the library Viro which is based off of ArCore 
 
 
