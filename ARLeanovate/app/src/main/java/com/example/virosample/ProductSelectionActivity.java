@@ -26,8 +26,7 @@ import java.util.List;
 import static com.example.virosample.ProductARActivity.INTENT_PRODUCT_KEY;
 
 /**
- * ProductSelectionActivity displays a list of categories and products. Customers can tap on a
- * product to display it in AR. Upon selection of a product we launch into {@link ProductARActivity}.
+ * Displays scenarios that can be displayed
  */
 public class ProductSelectionActivity extends Activity {
     private ProductAdapter mProductAdapter;
@@ -38,11 +37,9 @@ public class ProductSelectionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_activity_main_layout);
 
-        // Init the scroll view, containing a list of categories, on the top of the layout
+       
         setupCategoryScrollView();
 
-        // Init the product grid view below the category scroll view. This will contain all
-        // the products pertaining to the selected cateogry.
         setupProductGridView();
     }
 
@@ -64,7 +61,7 @@ public class ProductSelectionActivity extends Activity {
         LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         categoryView.setLayoutManager(manager);
 
-        // If a cateogry is clicked, refresh the product grid view with the latest products.
+    
         mCategoryAdapter.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,12 +72,12 @@ public class ProductSelectionActivity extends Activity {
     }
 
     private void setupProductGridView(){
-        // Bind the product data to the gridview.
+        
         mProductAdapter = new ProductAdapter(this);
         GridView gridview = (GridView) findViewById(R.id.product_grid_view);
         gridview.setAdapter(mProductAdapter);
 
-        // If a product is selected, enter AR mode with the selected product.
+        // If a scenarios is selected, enter AR mode with the selected scenario.
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Product selectedProduct = (Product) mProductAdapter.getItem(position);
@@ -131,7 +128,6 @@ public class ProductSelectionActivity extends Activity {
                 }
             });
 
-            // Note: If cateogry is selected, show highlighted area
             if (mSelectedCategoryIndex == position){
                 holder.highlightView.setVisibility(View.VISIBLE);
             } else {
@@ -145,10 +141,10 @@ public class ProductSelectionActivity extends Activity {
         }
 
         public void invalidate(){
-            // Grab category data from the db.
+            
             mCatList = mContext.getProductDB().getCatlist();
 
-            // Notify data set has changed.
+           
             notifyDataSetChanged();
         }
 

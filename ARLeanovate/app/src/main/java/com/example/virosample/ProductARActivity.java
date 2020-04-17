@@ -50,8 +50,7 @@ import java.io.File;
 import java.util.Arrays;
 
 /**
- *  A ViroCore ProductARActivity that coordinates the placing of a Product last selected in the
- * {@link ProductSelectionActivity} in AR.
+ Display the AR scenario selected
  */
 public class ProductARActivity extends Activity {
     private static final int RECORD_PERM_KEY = 50;
@@ -85,10 +84,7 @@ public class ProductARActivity extends Activity {
     private Vector mSavedRotateToRotation = new Vector();
     private ARHitTestListenerCrossHair mCrossHairHitTest = null;
 
-    /*
-     * ARNode under which to parent our 3D furniture model. This is only created
-     * and non-ull if a user has selected a surface upon which to place the furniture.
-     */
+    
     private ARNode mHitARNode = null;
 
     @Override
@@ -191,7 +187,7 @@ public class ProductARActivity extends Activity {
         // Start our tracking UI when the scene is ready to be tracked
         mScene.setListener(new ARSceneListener());
 
-        // Finally set the arScene on the renderer
+        //  set the arScene on the renderer
         mViroView.setScene(mScene);
     }
 
@@ -317,12 +313,11 @@ public class ProductARActivity extends Activity {
         shadowNode.setLightReceivingBitMask(1);
         shadowNode.setPosition(new Vector(0,-0.01,0));
         shadowNode.setRotation(new Vector(-1.5708,0,0));
-        // We want the shadow node to ignore all events because it contains a surface of size 20x20
-        // meters and causes this to capture events which will bubble up to the mProductModelGroup node.
+        
         shadowNode.setIgnoreEventHandling(true);
         mProductModelGroup.addChildNode(shadowNode);
 
-        // Load the model from the given mSelected Product
+        // Load the model from the given mSelected scenario
         final Object3D productModel = new Object3D();
         productModel.loadModel(mViroView.getViroContext(), Uri.parse(mSelectedProduct.m3DModelUri), Object3D.Type.FBX, new AsyncObject3DListener() {
             @Override

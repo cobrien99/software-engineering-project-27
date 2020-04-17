@@ -13,8 +13,9 @@ import com.example.virosample.model.Product;
 import static com.example.virosample.ProductARActivity.INTENT_PRODUCT_KEY;
 
 /**
- * ProductDetailActivity mocks the displaying of product detail information in a WebView.
+Originally planned to display fitbit data but integration was not successful
  */
+
 public class ProductDetailActivity extends Activity {
 
     private WebView mWebView;
@@ -22,17 +23,7 @@ public class ProductDetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*ssssssetContentView(R.layout.activity_product_detail);
-
-        mWebView = (WebView) findViewById(R.id.webview);
-        WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        Intent intent = getIntent();
-        String key = intent.getStringExtra(INTENT_PRODUCT_KEY);
-        ProductApplicationContext context = (ProductApplicationContext)getApplicationContext();
-        final Product selectedProduct = context.getProductDB().getProductByName(key);
-        mWebView.loadUrl(selectedProduct.mUrlWebPage);*/
+       
 
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -46,13 +37,12 @@ public class ProductDetailActivity extends Activity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        // Check if the key event was the Back button and if there's history
+        // Check if the key event was the Back button 
         if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
             mWebView.goBack();
             return true;
         }
-        // If it wasn't the Back key or there's no web page history, bubble up to the default
-        // system behavior (probably exit the activity)
+        
         return super.onKeyDown(keyCode, event);
     }
 }
